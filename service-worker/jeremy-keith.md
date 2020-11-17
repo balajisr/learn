@@ -1,3 +1,4 @@
+[Jeremy Keith: Going Offline](https://www.youtube.com/watch?v=RVdW-P_oAJ0&t=2062s)
 
 # Service Worker
 Today's web has absolved itself with lot of different patterns along its way all these years.
