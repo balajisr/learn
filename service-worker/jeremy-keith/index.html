@@ -6,6 +6,10 @@
     <title>Jeremy Keith: Going Offline</title>
 </head>
 <body>
-    
+    <script>
+        if(navigator.serviceWorker) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
 </body>
 </html>
