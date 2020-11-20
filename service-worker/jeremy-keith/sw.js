@@ -9,12 +9,12 @@ addEventListener('install', event => {
 
 //cache first
 addEventListener('fetch', event => {
-    if(event.request.headers.get('Accept').includes('text/html')) {
-      event.respondWith(fetch(event.request)).then(response => {
-        return response;
-      }).catch(error => {
-        // return caches.match('offline.html');
-        console.log('offline.html')
-      })
-    }
+  var acceptHeaders = event.request.headers.get('Accept');
+  if(acceptHeaders.includes('text/html') || acceptHeaders.includes('text/css')) {
+    event.respondWith(fetch(event.request)).then(response => {
+      return response;
+    }).catch(error => {
+      // return caches.match('offline.html');
+    })
+  }
 })
