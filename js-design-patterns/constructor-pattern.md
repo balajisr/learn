@@ -1,12 +1,12 @@
 # Constructor Patterns
 
-### Two ways to create object
+## Two ways to create object
 ```javascript
 var obj1 = {};
 var obj2 = new Object();
 ```
 
-### Four ways to modify properties
+## Four ways to modify properties
 #### Dot Notation
 ```javascript
 obj1.name = 'Arun';
