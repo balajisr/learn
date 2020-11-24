@@ -7,15 +7,15 @@ var obj2 = new Object();
 ```
 
 ### Four ways to modify properties
-####Dot Notation
+#### Dot Notation
 ```javascript
 obj1.name = 'Arun';
 ```
-####Square Brackets
+#### Square Brackets
 ```javascript
 obj1['age'] = 30;
 ```
-####Object.defineProperty
+#### Object.defineProperty
 ```javascript
 Object.defineProperty(obj2, "name", {
     value: "Asha",
@@ -24,7 +24,7 @@ Object.defineProperty(obj2, "name", {
     configurable: true
 })
 ```
-####Object.defineProperties
+#### Object.defineProperties
 ```javascript
 Object.defineProperties(obj2, {
     "age": {
@@ -37,7 +37,7 @@ Object.defineProperties(obj2, {
     }
 })
 ```
-##Basic Constructors
+## Basic Constructors
 ```javascript
 function Car(model, year, miles) {
     this.model = model;
@@ -52,7 +52,7 @@ function Car(model, year, miles) {
 var civic = new Car("Honda Civic", 2009, 20000);
 var mondeo = new Car("Ford Mondeo", 2010, 5000);
 ```
-##Constructors with prototype
+## Constructors with prototype
 ```javascript
 function Cars(model, year, miles) {
     this.model = model;
