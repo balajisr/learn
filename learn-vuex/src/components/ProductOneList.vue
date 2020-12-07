@@ -1,22 +1,24 @@
 <template>
     <div id="product-one-list">
         <h1>Product One List</h1>
-        <ul :v-if="products.length">
-            <li :v-for="product in products">Name: {{ product.name }}</li>
+        <ul>
+            <li :v-for="(item, i) in products" :key="i">Name: {{ item.name }}</li>
         </ul>
     </div>
 </template>
 
 <script>
 export default {
-    props: {
-        "products": Array
-    },
+    props: ['products'],
     data() {
         return {
+            items: [
+                { name: "Tomato", qty: 1, price: 20 },
+                { name: "Banana", qty: 10, price: 7 },
+                { name: "Onion", qty: 1, price: 40 },
+                { name: "Apple", qty: 3, price: 40 }
+            ]
         }
-    },
-    created() {
     }
 }
 </script>
