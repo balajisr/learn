@@ -25,9 +25,9 @@ Injector will create an instance of our dependency and provide a constructor par
 
 ## Injector Hierarchy & Resolution Rules
 There are 2 hierarchy in Angular,
- 1. Model Injector
+ 1. Module Injector
  2. Element Injector
-### Model Injector
+### Module Injector
 When angular starts it creates a root injector, where our services will be registered which we provided via @Injectable() annotation and services provided in @NgModule() property called *providers*. This makes available across application.
 
 #### Root Injector
@@ -56,3 +56,24 @@ This injector is created for every lazy-loaded module
 
 So the hierarchy in this model is,
     Child Injector -> Root Injector -> Platform Injector -> Null Injector
+
+### Element Injector
+Services which were configured in @Component() and in @Directive annotations
+
+    @Component({
+        selector: 'root',
+        providers: [UserService],
+        template: '<some-component></some-component>'
+        //...
+    })
+    export class RootComponent {}
+    @Directive({
+        selector: '[appSome]',
+        providers: [UserService]
+    })
+    export class SomeDirective {}
+
+This model passes instance to all its child components...
+
+### Dependency Resolution Rules
+When a new instance is created inside a constructor, Angular first tries to resolve using *Element Injector* and then checks in what module the current component is declared.
