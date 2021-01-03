@@ -4,10 +4,10 @@
 
 **Old Patterns goes away**
 ```javascript
-    (function() {
-        "use strict";
+(function() {
+    "use strict";
 
-    }());
+}());
 ```
 
 - No need to write IIFE, because ES-2015 has module scope.
@@ -15,19 +15,20 @@
 - Modules interpret programs in strict mode by default.
 
 ### Export
-    function work(name) {
-        return `${name} is working`;
+```javascript
+function work(name) {
+    return `${name} is working`;
+}
+
+class Person {
+    constructor(name) {
+        this.name = name;
     }
-
-    class Person {
-        constructor(name) {
-            this.name = name;
-        }
-        doWork() {
-            return work(this.name);
-        }
+    doWork() {
+        return work(this.name);
     }
+}
 
-    export {work, Person}
-    export default Person
-
+export {work, Person}
+export default Person
+```
