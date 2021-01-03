@@ -3,6 +3,7 @@
 # ES Modules
 
 **Old Patterns goes away**
+
     (function() {
         "use strict";
 
