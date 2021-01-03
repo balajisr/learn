@@ -3,11 +3,12 @@
 # ES Modules
 
 **Old Patterns goes away**
-
+```javascript
     (function() {
         "use strict";
 
     }());
+```
 
 - No need to write IIFE, because ES-2015 has module scope.
 - Every .js/.ts files are modules now.
