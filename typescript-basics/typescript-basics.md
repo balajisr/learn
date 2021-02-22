@@ -165,3 +165,13 @@ let calcSum: (a:number, b:number, c?:number) => number;
 calcSum(2, 3, 4); //fine
 calcSum(2, 3); //fine
 ```
+
+## Void Type
+
+Void type is mostly used when a function doesn't have any type declaration in params and also doesn't return value.
+
+```typescript
+function warnUser(): void {
+  console.log("This is my warning message");
+}
+```
