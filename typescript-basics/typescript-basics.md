@@ -1,3 +1,5 @@
+Info - [codeSTACKr Typescript Basics](https://www.youtube.com/watch?v=wyO8RWl1ges)
+
 # Typescript Basics
 
 The types that we are going to cover are,
@@ -131,4 +133,35 @@ type stringOrNum = string | number;
 let year: stringOrNum;
 year = 2021;
 year = "2021";
+```
+
+## Function type
+
+```typescript
+function calcSum(a:number, b:number) {
+    return a + b;
+}
+
+calcSum(2, 3); //fine
+calcSum("2", 3); //typescript error
+```
+
+In order to define function to a variable, we can use
+
+```typescript
+let calcSum: (a:number, b:number) => number;
+
+//this function accepts two number arguments and returns a number
+calcSum = (num1, num2) => {
+    return num1 + num2;
+}
+```
+
+Sometimes, we encounter a optional parameter to a function, in that case we can use ```?``` as optional param
+
+```typescript
+let calcSum: (a:number, b:number, c?:number) => number;
+
+calcSum(2, 3, 4); //fine
+calcSum(2, 3); //fine
 ```
