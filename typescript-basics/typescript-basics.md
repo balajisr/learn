@@ -175,3 +175,75 @@ function warnUser(): void {
   console.log("This is my warning message");
 }
 ```
+
+## Interface type
+
+Interface impose a certain structure of an object.
+
+```typescript
+interface PersonInterface {
+    name: string;
+    age: number;
+}
+
+let mike: PersonInterface = {
+    name: "Mike",
+    age: 24
+}
+```
+
+### Interfaces on classes
+
+```typescript
+class Person implements PersonInterface {
+    name: string,
+    age: number
+
+    constructor(n: string, a: number) {
+        this.name = n;
+        this.age = a;
+    }
+
+    greet() {
+        console.log(`${this.name} - ${this.age}`);
+    }
+}
+
+let john = new Person("John", 24);
+console.log(john.name);
+```
+
+### Adding private, public to variables and methods
+
+```typescript
+class Person implements PersonInterface {
+    private name: string,
+    private age: number
+
+    constructor(n: string, a: number) {
+        this.name = n;
+        this.age = a;
+    }
+
+    public greet() {
+        console.log(`${this.name} - ${this.age}`);
+    }
+}
+
+let john = new Person("John", 24);
+console.log(john.name); //typescript error
+console.log(john.age); //typescript error
+console.log(john.greet()); //fine
+```
+
+We can shorten the above class interface by declaring interface properties in constructor itself
+
+```typescript
+class Person implements PersonInterface {
+    constructor(private name: string, private age: number) {}
+
+    public greet() {
+        console.log(`${this.name} - ${this.age}`);
+    }
+}
+```
