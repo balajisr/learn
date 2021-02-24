@@ -340,3 +340,24 @@ const bBook: book<string[]> = { //here type is array of strings
     data: ["Review 1", "Review 2"]
 }
 ```
+
+## Enums
+
+Enums helps to assign a descriptive word to numbers.
+
+```typescript
+const myCar = {
+    year: 2021,
+    make: 3
+}
+```
+In above example, it is not quite clear what does make actually means. We can use typescript enums to give more descriptive sense.
+
+```typescript
+enum ManufacturerMake { TESLA, AUDI, MERCEDES, VOLVO, BMW }
+
+const myCar = {
+    year: 2021,
+    make: ManufactureMake.VOLVO // this will replace number 3
+}
+```
