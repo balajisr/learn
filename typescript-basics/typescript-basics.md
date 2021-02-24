@@ -249,6 +249,7 @@ class Person implements PersonInterface {
 ```
 
 ## DOM & Type Casting
+### Type casting
 
  ```html
  //index.html
@@ -261,8 +262,6 @@ class Person implements PersonInterface {
  <div class="greeting"></div>
  ```
 
- ### Type casting
-
 Type casting informs typescript whether particular selector is html element.
 
  ```typescript
@@ -270,6 +269,7 @@ Type casting informs typescript whether particular selector is html element.
 
 const inputName = document.querySelector('#name') as HTMLInputElement; //Type casting
 const inputAge = document.querySelector('#age'); //Type casting
+const greeting = document.querySelector('.greeting') as HTMLDivElement; //Type casting
 
 console.log(inputName.value); //fine
 console.log(inputAge.value); //typescript error as typescript doesn't know whether this element exists or not
@@ -280,7 +280,8 @@ console.log(inputAge.value); //typescript error as typescript doesn't know wheth
 There are two ways in which we can turn off type casting error
 
 ```typescript
-// Issue 1
+// Issue
+
 const inputForm = document.querySelector('form');
 
 inputForm.addEventListener('submit', (e) => {
@@ -289,10 +290,17 @@ inputForm.addEventListener('submit', (e) => {
 ```
 Here, ```inputForm``` will show intellisense error as typescript does not know whether inputForm element exists
 ```typescript
-// Issue 1 Sol
+// Issue Sol 1
 
 inputForm?.addEventListener('submit', (e) => {
     console.log(e);
 })
 ```
 By adding the optional ```?``` symbol we can inform typescript to ignore intellisense error
+
+```typescript
+// Issue Sol 2
+const inputForm = document.querySelector('form')!;
+```
+By adding ```!``` in selector, typescript will understand to ignore intellisense error.
+
