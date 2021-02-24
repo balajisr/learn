@@ -304,3 +304,39 @@ const inputForm = document.querySelector('form')!;
 ```
 By adding ```!``` in selector, typescript will understand to ignore intellisense error.
 
+## Generics
+
+Generics helps us when we don't know what kind of type we are going to pass in.
+
+```typescript
+function doSomething<T>(arg: T): T {
+    return arg;
+}
+
+doSomething(3); //fine
+doSomething('3'); //fine
+doSomething<string>('3'); //can only pass string
+```
+In above example, it accepts an argument of any type and returns the same type.
+
+### Passing generics to interface
+
+```typescript
+interface book<T> {
+    id: number;
+    name: string;
+    data: T
+}
+
+const aBook: book<string> = {  //here type is string
+    id: 1,
+    name: 'zero to one',
+    data: "some data"
+}
+
+const bBook: book<string[]> = { //here type is array of strings
+    id: 2,
+    name: 'thinking fast, and slow',
+    data: ["Review 1", "Review 2"]
+}
+```
