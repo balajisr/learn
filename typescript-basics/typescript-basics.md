@@ -1,4 +1,4 @@
-Info - [codeSTACKr Typescript Basics](https://www.youtube.com/watch?v=wyO8RWl1ges)
+**Source** - [codeSTACKr Typescript Basics](https://www.youtube.com/watch?v=wyO8RWl1ges)
 
 # Typescript Basics
 
@@ -178,7 +178,7 @@ function warnUser(): void {
 
 ## Interface type
 
-Interface impose a certain structure of an object.
+Interface impose a certain structure to an object.
 
 ```typescript
 interface PersonInterface {
@@ -247,3 +247,52 @@ class Person implements PersonInterface {
     }
 }
 ```
+
+## DOM & Type Casting
+
+ ```html
+ //index.html
+
+ <form>
+    <input type="text" name="name" id="name">
+    <input type="number" name="age" id="age">
+    <input type="submit" value="Say Hi">
+ </form>
+ <div class="greeting"></div>
+ ```
+
+ ### Type casting
+
+Type casting informs typescript whether particular selector is html element.
+
+ ```typescript
+ //app.js
+
+const inputName = document.querySelector('#name') as HTMLInputElement; //Type casting
+const inputAge = document.querySelector('#age'); //Type casting
+
+console.log(inputName.value); //fine
+console.log(inputAge.value); //typescript error as typescript doesn't know whether this element exists or not
+```
+
+### Turn off type casting
+
+There are two ways in which we can turn off type casting error
+
+```typescript
+// Issue 1
+const inputForm = document.querySelector('form');
+
+inputForm.addEventListener('submit', (e) => {
+    console.log(e);
+})
+```
+Here, ```inputForm``` will show intellisense error as typescript does not know whether inputForm element exists
+```typescript
+// Issue 1 Sol
+
+inputForm?.addEventListener('submit', (e) => {
+    console.log(e);
+})
+```
+By adding the optional ```?``` symbol we can inform typescript to ignore intellisense error
