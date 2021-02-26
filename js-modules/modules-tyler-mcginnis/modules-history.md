@@ -9,3 +9,10 @@ Modules structure our code in following ways,
 - **Leverage** Outsource individual modules to create profit/influence.
 - **Isolation** Due to it's composibility, it can be developed in isolation without knowledge of other funcionalities.
 - **Organization** Modules naturally create boundries and define interactivity between multiple parts.
+
+## Javascript Module
+
+Each module has three different parts,
+- **imports** (dependencies)
+- **code**
+- **exports**
