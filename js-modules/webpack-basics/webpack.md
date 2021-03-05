@@ -59,3 +59,7 @@ For each loader we need to give webpack two types of information,
 So to import svg files, we need to download svg loader
 ```npm install svg-inline-loader --save-dev```
 
+## Plugins
+
+**Loaders** - Individual files before or while the bundle is being generated
+**Plugins** - After the bundle has been created
