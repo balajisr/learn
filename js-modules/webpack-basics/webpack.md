@@ -62,4 +62,5 @@ So to import svg files, we need to download svg loader
 ## Plugins
 
 **Loaders** - Individual files before or while the bundle is being generated
+
 **Plugins** - After the bundle has been created
